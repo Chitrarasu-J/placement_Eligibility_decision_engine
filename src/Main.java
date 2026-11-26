@@ -26,21 +26,8 @@ public class Main {
                 2026
         );
 
-        boolean percentagePass
-                = candidate.getPercentage() > job.getMinimumPercentage();
-
-        boolean backlogPass
-                = candidate.getBacklogs() < job.getMaximumBacklogs();
-
-        boolean yearPass
-                = candidate.getGraduationYear() == job.getRequiredGraduationYear();
-
-        boolean eligible
-                = percentagePass && backlogPass && yearPass;
-
-        System.out.println("================================");
-        System.out.println("PLACEMENT ELIGIBILITY RESULT");
-        System.out.println("================================");
+        EligibilityChecker checker = new EligibilityChecker();
+        Eligibility eligibility = new Eligibility();
 
         System.out.println();
         System.out.println("Candidate : " + candidate.getName());
@@ -48,31 +35,17 @@ public class Main {
         System.out.println("Role      : " + job.getRole());
         System.out.println();
 
-        if (percentagePass) {
-            System.out.println("Percentage      : PASS");
-        } else {
-            System.out.println("Percentage      : FAIL");
-        }
+        System.out.println("================================");
+        System.out.println("PLACEMENT ELIGIBILITY RESULTS");
+        System.out.println("================================");
 
-        if (backlogPass) {
-            System.out.println("Backlogs        : PASS");
-        } else {
-            System.out.println("Backlogs        : FAIL");
-        }
+        boolean eligible = checker.check(candidate, job);
 
-        if (yearPass) {
-            System.out.println("Graduation Year : PASS");
-        } else {
-            System.out.println("Graduation Year : FAIL");
-        }
+        System.out.println("================================");
 
-        System.out.println();
+        String result = eligibility.eligible(eligible);
 
-        if (eligible) {
-            System.out.println("Final Result : ELIGIBLE");
-        } else {
-            System.out.println("Final Result : NOT ELIGIBLE");
-        }
+        System.err.println(result);
 
         System.out.println("================================");
 
