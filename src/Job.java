@@ -1,3 +1,4 @@
+// job details and criteria
 
 public class Job {
 
@@ -6,21 +7,26 @@ public class Job {
     private double minimumPercentage;
     private int maximumBacklogs;
     private int requiredGraduationYear;
+    private String[] requiredSkills;
 
+    // 6-parameter constructor including required skills
     public Job(
             String company,
             String role,
             double minimumPercentage,
             int maximumBacklogs,
-            int requiredGraduationYear
+            int requiredGraduationYear,
+            String[] requiredSkills
     ) {
         this.company = company;
         this.role = role;
         this.minimumPercentage = minimumPercentage;
         this.maximumBacklogs = maximumBacklogs;
         this.requiredGraduationYear = requiredGraduationYear;
+        this.requiredSkills = requiredSkills;
     }
 
+    // getter methods
     public String getCompany() {
         return company;
     }
@@ -39,5 +45,9 @@ public class Job {
 
     public int getRequiredGraduationYear() {
         return requiredGraduationYear;
+    }
+
+    public String[] getRequiredSkills() {
+        return requiredSkills;
     }
 }

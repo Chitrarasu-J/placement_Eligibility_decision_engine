@@ -1,3 +1,4 @@
+// candidate model class
 
 public class Candidate {
 
@@ -5,19 +6,24 @@ public class Candidate {
     private double percentage;
     private int backlogs;
     private int graduationYear;
+    private String[] skills;
 
+    // constructor
     public Candidate(
             String name,
             double percentage,
             int backlogs,
-            int graduationYear
+            int graduationYear,
+            String[] skills
     ) {
         this.name = name;
         this.percentage = percentage;
         this.backlogs = backlogs;
         this.graduationYear = graduationYear;
+        this.skills = skills;
     }
 
+    // getter methods
     public String getName() {
         return name;
     }
@@ -32,5 +38,15 @@ public class Candidate {
 
     public int getGraduationYear() {
         return graduationYear;
+    }
+
+    // Creating a method for checking a skill is present in the candidate skill or not
+    public boolean hasSkill(String requiredSkill) {
+        for (int i = 0; i < skills.length; i++) {
+            if (skills[i].equalsIgnoreCase(requiredSkill)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -1,4 +1,4 @@
-
+// base class for eligibility rules
 public abstract class EligibilityRule {
 
     public abstract String getRuleName();

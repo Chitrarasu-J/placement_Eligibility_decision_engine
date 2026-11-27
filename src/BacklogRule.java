@@ -1,4 +1,4 @@
-
+// rule to check backlogs
 public class BacklogRule extends EligibilityRule {
 
     @Override
@@ -6,6 +6,7 @@ public class BacklogRule extends EligibilityRule {
         return "Backlog";
     }
 
+    // check if candidate's backlogs are within allowed limit
     @Override
     public boolean check(Candidate candidate, Job job) {
 

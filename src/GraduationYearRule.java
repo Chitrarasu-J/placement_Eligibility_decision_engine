@@ -1,4 +1,4 @@
-
+// rule to check graduation year
 public class GraduationYearRule extends EligibilityRule {
 
     @Override
@@ -6,6 +6,7 @@ public class GraduationYearRule extends EligibilityRule {
         return "GraduationYear";
     }
 
+    // graduation year must match required year
     @Override
     public boolean check(Candidate candidate, Job job) {
 

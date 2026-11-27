@@ -1,4 +1,4 @@
-
+// returns final result message
 public class Eligibility {
 
     public String eligible(boolean eligible) {
